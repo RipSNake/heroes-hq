@@ -12,9 +12,7 @@ export const HomeScreen = () => {
 
 	useEffect(() => {
 		console.log('Call Heroes\'s API');
-		apiService({method: 'get', id: 1})
-		setList(['hello']);
-	}, []);
+	}, [list]);
 
 	return (
 		<>

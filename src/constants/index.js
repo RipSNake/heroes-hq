@@ -1,3 +1,8 @@
+// routes
+export const LOGIN_SCREEN = '/login';
+export const HOME_SCREEN = '/home';
+export const SEARCH_SCREEN = '/search';
+
 // redux slice status
 export const IDLE = 'idle';
 export const LOADING = 'loading';
@@ -15,7 +20,7 @@ export const DELETE = 'delete';
 export const API_URL = `https://superheroapi.com/api.php`;
 export const API_TOKEN = '10160265755538455';
 
-export const LOGIN_URL = 'http://challenge-react.alkemy.org/';
+export const LOGIN_URL = 'http://challenge-react.alkemy.org';
 
 export const POWERSTATS = '/powerstats';
 export const BIOGRAPHY = '/biography';

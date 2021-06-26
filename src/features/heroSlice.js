@@ -1,31 +1,50 @@
-// import { createSlice } from '@reduxjs/toolkit';
-// import { IDLE, LOADING, SUCCEEDED, FAILED } from './../constants';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { IDLE, LOADING, SUCCEEDED, FAILED } from './../constants';
 
-// export const heroSlice = createSlice({
-//   name: 'hero',
-//   initialState: {
-//     heroes: [],
-//     status: IDLE,
-//     error: null
-//   },
-//   reducers: {
-//     increment: (state) => {
-//       // Redux Toolkit allows us to write "mutating" logic in reducers. It
-//       // doesn't actually mutate the state because it uses the Immer library,
-//       // which detects changes to a "draft state" and produces a brand new
-//       // immutable state based off those changes
-//       state.heroes = state.heroes.concat({name: 'New Hero'})
-//     },
-//     decrement: (state) => {
-//       console.log('Decrement Hero');
-//     },
-//     incrementByAmount: (state, action) => {
-//       console.log('Increment by amount of action.payload: ',action.payload);
-//     },
-//   },
-// })
+import apiService from './../services/apiService';
 
-// // Action creators are generated for each case reducer function
-// export const { increment, decrement, incrementByAmount } = heroSlice.actions
+// fetch all heros from the API
+const getHeroes = createAsyncThunk(
+  'hero/getHeroes',
+  async () => {
+    return await apiService();
+  }
+)
 
-// export default heroSlice.reducer
+export const heroSlice = createSlice({
+  name: 'hero',
+  initialState: {
+    heroes: [],
+    myTeam: [],
+    status: IDLE,
+    error: null
+  },
+  reducers: {
+  	// teamreducers
+    addHeroTeam: (state,{hero}) => {
+      state.heroes = state.heroes.concat(hero);
+    },
+    deleteHeroTeam: (state, {id}) => {
+      console.log('Delete Hero', id);
+    },
+  },
+  extraReducers: {
+  	[fetchUserById.pending]: (state, action) => {
+  		state.status = LOADING;
+  	},
+  	[fetchUserById.fulfilled]: (state, action) => {
+  		console.log(action.payload);
+  		state.heroes = state.heroes.concat(action.payload);
+  		state.status = SUCCEEDED;
+  	},
+  	[fetchUserById.rejected]: (state, action) => {
+  		state.status = FAILED;
+  		state.error = action.error;
+  	},
+  }
+})
+
+// Action creators are generated for each case reducer function
+export const { addHero, deleteHero, editHero } = heroSlice.actions
+
+export default heroSlice.reducer

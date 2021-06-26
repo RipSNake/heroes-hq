@@ -3,6 +3,7 @@ import { API_URL, API_TOKEN } from './../constants';
 
 export const apiService = async({
 	baseURL,
+	url = '/',
 	method,
 	id, 
 	searchParams,
@@ -10,6 +11,8 @@ export const apiService = async({
 	}) => {
 
 	const options = {
+		baseURL,
+		url,
 		method,
 	}
 	
@@ -25,11 +28,9 @@ export const apiService = async({
 		const response = await axios(options);
 		return response.data;
 	} catch(err) {
-		console.log('Axios ERROR: ',err);
+		
+		return Error(err);
 	}
 }
 
 export default apiService;
-/*
-	Heroes's ID's goes from 1 to 731
-*/
