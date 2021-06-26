@@ -1,6 +1,6 @@
 export const Loader = () => {
 	return (
-		<div class="alkemy-spinner"></div>
+		<div className="alkemy-spinner"></div>
 	)
 }
 

@@ -1,10 +1,11 @@
-// import { createSlice } from '@reduxjs/toolkit';
+// //import { createSlice } from '@reduxjs/toolkit';
 // import { IDLE, LOADING, SUCCEEDED, FAILED } from './../constants';
 
 // export const heroSlice = createSlice({
-//   name: 'hero',
+//   name: 'user',
 //   initialState: {
-//     heroes: [],
+//     user: {email: 'guest@alkemy.org'},
+//     token: null,
 //     status: IDLE,
 //     error: null
 //   },
