@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
-//components
-import Loader from './../../components/Loader';
-// constants
-// import { IDLE } from './../../constants';
-// redux
-// import { useSelection, dispatch } from '@reduxjs/toolkit';
+//	components
+import HeroesList from './../../components/HeroesList';
+// http service
 import apiService from './../../services/apiService';
 
 export const HomeScreen = () => {
@@ -16,15 +13,7 @@ export const HomeScreen = () => {
 
 	return (
 		<>
-		{ !(list.length > 0) ?
-			<>
-				<Loader />
-			</>
-			:
-			<>
-				<h1>Heroes's List</h1>
-			</>	
-		}
+			<HeroesList />
 		</>
 	)
 };

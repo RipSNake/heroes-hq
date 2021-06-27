@@ -2,6 +2,7 @@
 export const LOGIN_SCREEN = '/login';
 export const HOME_SCREEN = '/home';
 export const SEARCH_SCREEN = '/search';
+export const HERO_SCREEN = '/hero';
 
 // redux slice status
 export const IDLE = 'idle';
@@ -29,3 +30,9 @@ export const WORK = '/work';
 export const CONNECTIONS = '/connections';
 export const IMAGE = '/image';
 export const SEARCH = '/search';
+
+export const ACCEPT_BTN = 'Accept';
+export const DELETE_BTN = 'Delete';
+export const DETAILS_BTN = 'Details';
+export const ADD_BTN = 'Add';
+export const BACK_BTN = 'Back';

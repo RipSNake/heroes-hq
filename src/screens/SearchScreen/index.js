@@ -1,9 +1,11 @@
+import HeroSearch from './../../components/HeroSearch';
+
 export const SearchScreen = () => {
 
 	return (
-		<>
-			<h1>From /search Screen</h1>
-		</>
+		<div className="">
+			<HeroSearch />
+		</div>
 	)
 };
 

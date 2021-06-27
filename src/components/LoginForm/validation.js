@@ -20,11 +20,7 @@ export const loginHandler = async (values, history) => {
 
 export const isLoggedIn = () => {
 	const user = localStorage.getItem('user');
-	
-	console.log(user);
-
 	if(user !== null && user !== undefined) {
-		console.log('TIRIRIE');
 		return true;
 	}
 	return false;

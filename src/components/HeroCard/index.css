@@ -1,0 +1,16 @@
+.alkemy-card {
+	min-width: ;
+}
+
+/* Styling PowerStats List */
+table {
+	width: 100%;
+	padding: 1em;
+	margin: 1em auto;
+}
+
+td {
+	padding: 0 .5em;
+	width: 50%;
+	text-align: left;
+}

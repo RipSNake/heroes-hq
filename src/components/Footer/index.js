@@ -1,6 +1,6 @@
 export const Footer = () => {
 	return (
-		<>From Footer</>
+		<footer>SJGuzman - Alkemy.org 2021 &copy;</footer>
 	)
 };
 
