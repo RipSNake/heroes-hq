@@ -1,6 +1,6 @@
 import './index.css';
 import { useState, useEffect } from 'react';
-import { useSelection, dispatch } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 // components
 import Loader from './../Loader';
 import HeroCard from './../HeroCard';
@@ -9,12 +9,12 @@ import myTeam from './myTeam';
 
 export const HeroesList = () => {
 	const [data, setData] = useState([]);
+	
+	const myTeam = useSelector(state => state.hero.heroes);
 
 	useEffect(() => {
-		if(data.length === 0) {
-			setData(myTeam);
-		}
-	}, [data]);
+		setData(myTeam);
+	}, [myTeam]);
 
 	return (
 		<div className="col justify-content-center">
@@ -23,11 +23,11 @@ export const HeroesList = () => {
 				:
 				<>
 					
-						<h1 className="col-12 my-5">My Actual Team</h1>
+						<h1 className="col-12 my-4 team-title">Active Team</h1>
 						<div className="row">
 						{ data.map((hero) => {
 							return(
-								<div className="col-12 col-sm-6 col-md-4" key={hero.id}>
+								<div key={hero.id} className="col-12 col-sm-6 col-md-4 my-4" >
 									<HeroCard hero={hero} />
 								</div>
 								)

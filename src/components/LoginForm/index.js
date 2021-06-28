@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
+import { useDispatch } from 'react-redux';
 import { loginHandler } from './validation';
 import * as Yup from 'yup';
 
@@ -9,7 +10,7 @@ import * as Yup from 'yup';
 	}) 
 
 export const LoginForm = () => {
-
+	const dispatch = useDispatch();
 	const history = useHistory();
 
 	return (

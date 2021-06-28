@@ -1,8 +1,8 @@
-// import { configureStore } from '@reduxjs/toolkit'
-// import heroReducer from './../features/heroSlice';
+import { configureStore } from '@reduxjs/toolkit'
+import heroReducer from './../features/heroSlice';
 
-// export default configureStore({
-//   reducer: {
-//     heroes: heroReducer,
-//   },
-// })
+export default configureStore({
+  reducer: {
+    hero: heroReducer,
+  },
+})

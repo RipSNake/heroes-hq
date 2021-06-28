@@ -1,8 +1,9 @@
 import './index.css';
 import { DETAILS_BTN, DELETE_BTN, BACK_BTN, HOME_SCREEN, HERO_SCREEN } from './../../constants';
 import { useEffect, useState } from 'react';
-import { useLocation, useHistory, Redirect, Link } from 'react-router-dom';
-import { getHero } from './../../controllers/heroesController';
+import { useLocation, Link } from 'react-router-dom';
+import { getHero, removeMember } from './../../controllers/heroesController';
+import { useDispatch } from 'react-redux';
 
 const initialvalues = {
   name: 'Hero\'s Name',
@@ -46,33 +47,20 @@ const initialvalues = {
 export const HeroCard = ({id, hero}) => {
   const [data, setData] = useState(initialvalues);
 	const location = useLocation();
-  const history = useHistory();
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if(id) {
       const hero = async () => await getHero(id);
       setData(hero);
     }
-    // if(hero) {
-    //   setData({
-    //     name: hero.name,
-    //     imageUrl: hero.image.url,
-    //     intelligence: hero.powerstats.intelligence,
-    //     strength: hero.powerstats.strength,
-    //     speed: hero.powerstats.speed,
-    //     durability: hero.powerstats.durability,
-    //     power: hero.powerstats.power,
-    //     combat: hero.powerstats.combat,
-    //   })
-    // }
   }, [data]);
 
   useEffect(() => {
     if(hero) {
       setData(hero);
     }
-  }, [hero]);
+  }, []);
 
 	return (	
 		<div className="alkemy-card" style={{'borderRadius':'10px', 'overflow':'hidden'}}>
@@ -132,12 +120,12 @@ export const HeroCard = ({id, hero}) => {
 
         <div className="d-flex justify-content-around">
           { location.pathname !== HOME_SCREEN ?
-            <Link className="alkemy-btn-primary" onClick={() => history.push(`${HOME_SCREEN}`) }>BACK_BTN</Link> 
+            <Link className="alkemy-btn-primary" to={HOME_SCREEN}>{BACK_BTN}</Link> 
           :
-            <Link className="alkemy-btn-primary" to={`${HERO_SCREEN}/${id}`} >DETAILS_BTN</Link>
-          }
+              <Link className="alkemy-btn-primary" to={{pathname: `${HERO_SCREEN}/${hero.id}`, state: {hero: data}}} >{DETAILS_BTN}</Link>
+            }
           
-          <a className="alkemy-btn-danger" onClick={() => {alert('DEletetetonertore')}}>DELETE_BTN</a>
+          <a className="alkemy-btn-danger" onClick={() => {removeMember(hero, dispatch)} }>{DELETE_BTN}</a>
         </div>
       </div>
  		</div>
@@ -145,7 +133,3 @@ export const HeroCard = ({id, hero}) => {
 };
 
 export default HeroCard;
-// ●  Nombre del héroe.
-// ●  Imagen.
-// ●  Powerstats.
-// ●  Acciones para ver el detalle o eliminarlo del equipo

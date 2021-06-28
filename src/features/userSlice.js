@@ -13,7 +13,8 @@ export const userSlice = createSlice({
     login: (state, {email, token}) => {
       state.user = email;
       state.token = token;
-      localStorage.setItem('token', JSON.stringify(token));
+      localStorage.setItem('user', email);
+      localStorage.setItem('token', token);
     },
   	logout: (state) => {
   		state.user = {};

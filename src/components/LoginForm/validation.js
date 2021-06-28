@@ -3,15 +3,15 @@ import { LOGIN_URL, POST, LOGIN_SCREEN, HOME_SCREEN } from './../../constants';
 import { alertSuccess, alertError } from './../Alerts';
 import login from './../../features/userSlice';
 
-export const loginHandler = async (values, history) => {
+export const loginHandler = async (values, history, dispatch) => {
 	
 	const token = await apiService({baseURL: LOGIN_URL, method: POST, data: values});
 
 	if(token instanceof Error) {
 		alertError('Datos de logueo Incorrectos');
 	} else {
-		alertSuccess(`Bienvenido de nuevo ${values.email}`);
-
+		alertSuccess(`Bienvenido ${values.email}`);
+		dispatch(login({email: values.email, token}))
 		localStorage.setItem('token', token);
 		localStorage.setItem('user', values.email);
 		history.push(HOME_SCREEN);

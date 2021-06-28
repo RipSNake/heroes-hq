@@ -1,6 +1,5 @@
 export const fakeHeroes = [
 	{
-  "response": "success",
   "id": "645",
   "name": "Swamp Thing",
   "powerstats": {
