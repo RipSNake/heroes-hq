@@ -17,7 +17,7 @@ export const LoginForm = () => {
 		<Formik 
 			initialValues={{email: '', password:''}}
 			validationSchema={LoginSchema}
-			onSubmit={(values) => loginHandler(values, history)} >
+			onSubmit={(values) => loginHandler(values, history, dispatch)} >
 
 			{({ errors, touched }) => (
 				<Form  className="col-12 col-sm-6 col-md-4 mx-auto my-5">

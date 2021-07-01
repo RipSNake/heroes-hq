@@ -2,6 +2,7 @@ import './index.css';
 import { DETAILS_BTN, DELETE_BTN, BACK_BTN, HOME_SCREEN, HERO_SCREEN } from './../../constants';
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { alertError } from './../Alerts';
 import { getHero, removeMember } from './../../controllers/heroesController';
 import { useDispatch } from 'react-redux';
 
@@ -44,23 +45,19 @@ const initialvalues = {
   },
 }
 
-export const HeroCard = ({id, hero}) => {
+export const HeroCard = ({hero}) => {
   const [data, setData] = useState(initialvalues);
 	const location = useLocation();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if(id) {
-      const hero = async () => await getHero(id);
-      setData(hero);
-    }
-  }, [data]);
-
-  useEffect(() => {
+  useEffect( () => {
     if(hero) {
       setData(hero);
+    } else {
+      const id = location.pathname.substring(6);
+      getHero(id).then(res => setData(res), err => alertError(err));
     }
-  }, []);
+  }, [location.pathname, hero]);
 
 	return (	
 		<div className="alkemy-card" style={{'borderRadius':'10px', 'overflow':'hidden'}}>
@@ -75,9 +72,9 @@ export const HeroCard = ({id, hero}) => {
             <h6>Alias</h6>
             <p>{data.biography['aliases']}</p>
             <h6>Peso</h6>
-            <p>{data.appearance.weight[0], data.appearance.weight[1]}</p>
+            <p>{data.appearance.weight[0]} - {data.appearance.weight[1]}</p>
             <h6>Altura</h6>
-            <p>{data.appearance.height[0]}, {data.appearance.height[1]}</p>
+            <p>{data.appearance.height[0]} - {data.appearance.height[1]}</p>
             <h6>Color de Ojos</h6>
             <p>{data.appearance['eye-color']}</p>
             <h6>Color de Cabello</h6>
@@ -122,10 +119,12 @@ export const HeroCard = ({id, hero}) => {
           { location.pathname !== HOME_SCREEN ?
             <Link className="alkemy-btn-primary" to={HOME_SCREEN}>{BACK_BTN}</Link> 
           :
-              <Link className="alkemy-btn-primary" to={{pathname: `${HERO_SCREEN}/${hero.id}`, state: {hero: data}}} >{DETAILS_BTN}</Link>
+            <>
+              <Link className="alkemy-btn-primary" to={`${HERO_SCREEN}/${hero.id}`} >{DETAILS_BTN}</Link>
+              <button className="alkemy-btn-danger" onClick={() => {removeMember(hero, dispatch)} }>{DELETE_BTN}</button>
+            </>
             }
           
-          <a className="alkemy-btn-danger" onClick={() => {removeMember(hero, dispatch)} }>{DELETE_BTN}</a>
         </div>
       </div>
  		</div>

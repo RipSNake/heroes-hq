@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux';
 import Loader from './../Loader';
 import HeroCard from './../HeroCard';
 
-import myTeam from './myTeam';
-
 export const HeroesList = () => {
 	const [data, setData] = useState([]);
 	
@@ -23,7 +21,7 @@ export const HeroesList = () => {
 				:
 				<>
 					
-						<h1 className="col-12 my-4 team-title">Active Team</h1>
+						
 						<div className="row">
 						{ data.map((hero) => {
 							return(

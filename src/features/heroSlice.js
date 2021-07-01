@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { IDLE } from './../constants';
 import myTeam from './../components/HeroesList/myTeam';
 
@@ -22,6 +22,6 @@ export const heroSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addHero, deleteHero } = heroSlice.actions
+export const { addHero, deleteHero } = heroSlice.actions;
 
 export default heroSlice.reducer

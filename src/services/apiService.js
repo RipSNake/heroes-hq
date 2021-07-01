@@ -4,7 +4,7 @@ import { API_URL, API_TOKEN } from './../constants';
 export const apiService = async({
 	baseURL,
 	url = '/',
-	method,
+	method = 'get',
 	id, 
 	searchParams,
 	data,

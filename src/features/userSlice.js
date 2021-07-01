@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IDLE, LOADING, SUCCEEDED, FAILED } from './../constants';
+import { IDLE } from './../constants';
 
 export const userSlice = createSlice({
   name: 'user',

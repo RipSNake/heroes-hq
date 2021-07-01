@@ -36,3 +36,5 @@ export const DELETE_BTN = 'Delete';
 export const DETAILS_BTN = 'Details';
 export const ADD_BTN = 'Add';
 export const BACK_BTN = 'Back';
+
+export const AVG = 'Average';
