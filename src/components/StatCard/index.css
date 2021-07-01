@@ -1,0 +1,8 @@
+.stat {
+  order: 1;
+}
+
+.main-stat {
+  order: 0;
+  background-color: red;
+}

@@ -11,17 +11,20 @@ import { AVG } from './../../constants';
 
 const biggerStat = (stats) => {
 	let bigger = '';
+	let value = 0;
 	for(let s in stats) {
-		if(stats[s] > bigger) {
-			bigger = stats;
+		if(stats[s] > value) {
+			value = stats[s];
+			bigger = s;
 		}
 	}
 	return bigger;
 }
 
 export const HomeScreen = () => {	
-	const [stats, setStats] = useState({power: 80});	
+	const [stats, setStats] = useState({});	
 	const [avgLook, setAvgLook] = useState({height: 0, weight: 0});
+	const [bigger, setBigger] = useState('');
 
 	const myTeam = useSelector(state => state.hero.heroes);
 
@@ -29,21 +32,27 @@ export const HomeScreen = () => {
 		const {totalPS, avgPhysicals} = teamPowerStats(myTeam);
 		setStats(totalPS);
 		setAvgLook(avgPhysicals);
-		biggerStat(stats);
 	}, [myTeam]);
+
+	 useEffect( () => {
+		setBigger(biggerStat(stats));
+	 }, [stats])
 	
 	return (
 		<>
 		<h1 className="col-12 my-4 team-title">Active Team</h1>
 		 <div className="container-fluid mx-auto row">
 		{ Object.keys(stats).map( (key, index) => {
+					let isMain = false;
+					if(key === bigger) {isMain = true;}
+					console.log('First render', 'bigger :',bigger,'key ', key);
 		 			return (
-		 				<StatCard stat={{name: key, value: stats[key]}} key={key}/>
+		 				<StatCard stat={{name: key, value: stats[key]}} key={key} isMain={isMain} />
 		 			)
 		 		})
 		 	}
 		</div>
-		<div className="container-fluid row my-4">*/}
+		<div className="container-fluid row my-4">
 			{ Object.keys(avgLook).map( (key, index) => {
 				return (
 					<>

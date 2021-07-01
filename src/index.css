@@ -28,11 +28,3 @@ footer {
   border:  0.5px solid red;
   border-radius: 10px;
 }
-
-.main-stat {
-  order: 0;
-}
-
-.stat {
-  order: 1;
-}
