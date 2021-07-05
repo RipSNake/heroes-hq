@@ -37,7 +37,7 @@ Each Hero Tile has 2 options:
 
 # Search Screen
 
-<img src="https://github.com/RipSNake/heroes-hq/tree/main/src/DemoImgs/Search.PNG" style="margin: 0 auto"/>
+<img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Search.PNG" style="margin: 0 auto"/>
 
 Perform a name Search for the Heroes that contains the search parameter string into thier names.
 
