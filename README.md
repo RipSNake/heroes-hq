@@ -37,7 +37,7 @@ Each Hero Tile has 2 options:
 
 # Search Screen
 
-<img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Search.png" />
+<img src="https://github.com/RipSNake/heroes-hq/tree/main/src/DemoImgs/Search.png" />
 
 Perform a name Search for the Heroes that contains the search parameter string into thier names.
 
@@ -47,7 +47,7 @@ If no results a obtained or an error ocurred, an Alert wll display and notificy 
 
 # Details Screen
 
-<img src="https://github.com/RipSNake/heroes-hq/blob/main/src/Details.png" />
+<img src="https://github.com/RipSNake/heroes-hq/tree/main/src/Details.png" />
 
 Shows the Hero's most relevant Personal Information:
 
