@@ -8,7 +8,7 @@ We use https://superheroapi.com/api.php for fetching our list of heroes.
 
 # Login Screen
 
-<img src="DemoImgs/Login.png"/>
+<img src="src/DemoImgs/Login.png"/>
 
 Displays a form with the needed information in order to login:
 
@@ -22,8 +22,8 @@ In this demo version the only accepted user is:
 
 # Home Screen
 
-<img src="DemoImgs/Home_1.png"/>
-<img src="DemoImgs/Home_2.png"/>
+<img src="src/DemoImgs/Home_1.png"/>
+<img src="src/DemoImgs/Home_2.png"/>
 
 In the Main Screen you can see all the heroes that are included into your team,
 
@@ -37,7 +37,7 @@ Each Hero Tile has 2 options:
 
 # Search Screen
 
-<img src="DemoImgs/Search.png" />
+<img src="src/DemoImgs/Search.png" />
 
 Perform a name Search for the Heroes that contains the search parameter string into thier names.
 
@@ -47,7 +47,7 @@ If no results a obtained or an error ocurred, an Alert wll display and notificy 
 
 # Details Screen
 
-<img src="Details.png" />
+<img src="src/Details.png" />
 
 Shows the Hero's most relevant Personal Information:
 
