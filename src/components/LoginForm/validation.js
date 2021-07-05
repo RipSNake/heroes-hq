@@ -1,11 +1,10 @@
-import apiService from './../../services/apiService';
-import { LOGIN_URL, POST, HOME_SCREEN } from './../../constants';
+import { HOME_SCREEN } from './../../constants';
 import { alertSuccess, alertError, alertConfirm } from './../Alerts';
 import { login, logout } from './../../features/userSlice';
 
 export const loginHandler = async (values, history, dispatch) => {
 	
-	//const token = await apiService({baseURL: LOGIN_URL, method: POST, data: values});
+	
 	const token = {token: 'fake-token'};
 
 	if(token instanceof Error) {
