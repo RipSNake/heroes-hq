@@ -8,6 +8,8 @@ We use https://superheroapi.com/api.php for fetching our list of heroes.
 
 # Login Screen
 
+<img src="DemoImgs/Login.png"/>
+
 Displays a form with the needed information in order to login:
 
 - Email
@@ -19,6 +21,9 @@ In this demo version the only accepted user is:
 - Password: 'react'
 
 # Home Screen
+
+<img src="DemoImgs/Home_1.png"/>
+<img src="DemoImgs/Home_2.png"/>
 
 In the Main Screen you can see all the heroes that are included into your team,
 
@@ -32,6 +37,8 @@ Each Hero Tile has 2 options:
 
 # Search Screen
 
+<img src="DemoImgs/Search.png" />
+
 Perform a name Search for the Heroes that contains the search parameter string into thier names.
 
 Then displays all available results and allows you to add them to your Team.
@@ -39,6 +46,8 @@ Then displays all available results and allows you to add them to your Team.
 If no results a obtained or an error ocurred, an Alert wll display and notificy what happened.
 
 # Details Screen
+
+<img src="Details.png" />
 
 Shows the Hero's most relevant Personal Information:
 
@@ -52,9 +61,9 @@ Shows the Hero's most relevant Personal Information:
 
 # Tecnologies Used
 
-- Axios
-- Formik + Yup
-- React
-- React Router Dom
-- Redux + Redux Toolkit
-- SweetAlert
+- <a href="https://github.com/axios/axios">Axios</a>
+- <a href="https://formik.org/docs/overview">Formik</a> + <a href="https://github.com/jquense/yup">Yup</a>
+- <a href="https://es.reactjs.org/docs/getting-started.html">React</a>
+- <a href="https://reactrouter.com/web/guides/quick-start">React Router Dom</a>
+- <a href="https://redux.js.org/introduction/getting-started">Redux</a> + <a href="https://redux-toolkit.js.org/tutorials/quick-start">Redux Toolkit</a>
+- <a href="https://sweetalert2.github.io/">Sweet Alert 2</a>
