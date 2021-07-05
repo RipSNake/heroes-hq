@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# SuperHeroes's HQ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Manage your own Team of Heroes !!
 
-## Available Scripts
+In this API you can combine your most beloved heroes together an recruit the team of your dreams
 
-In the project directory, you can run:
+We use https://superheroapi.com/api.php for fetching our list of heroes.
 
-### `yarn start`
+# Login Screen
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Displays a form with the needed information in order to login:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Email
+- Password
 
-### `yarn test`
+In this demo version the only accepted user is:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Email: challenge@alkemy.org 
+- Password: 'react'
 
-### `yarn build`
+# Home Screen
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In the Main Screen you can see all the heroes that are included into your team,
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+and the sum of all their attributes, emphasizing the strongest one.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each Hero Tile has 2 options: 
 
-### `yarn eject`
+- Details: Redirects to Detail Page of the selected hero
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Delete: removes the Hero from your Team's formation, after confirmation.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Search Screen
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Perform a name Search for the Heroes that contains the search parameter string into thier names.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Then displays all available results and allows you to add them to your Team.
 
-## Learn More
+If no results a obtained or an error ocurred, an Alert wll display and notificy what happened.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Details Screen
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Shows the Hero's most relevant Personal Information:
 
-### Code Splitting
+- Full Name
+- Aliases
+- Weight
+- Height
+- Eye-color
+- Hair-color
+- Place of Work/Base
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Tecnologies Used
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Axios
+- Formik + Yup
+- React
+- React Router Dom
+- Redux + Redux Toolkit
+- SweetAlert
