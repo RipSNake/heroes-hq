@@ -60,7 +60,7 @@ export const HeroCard = ({hero}) => {
   }, [location.pathname, hero]);
 
 	return (	
-		<div className="alkemy-card" style={{'borderRadius':'10px', 'overflow':'hidden'}}>
+		<div className="alkemy-card mx-auto">
       <img className="card-img-top" src={data.image.url} alt={`Imagen de  ${data.name}`} />
       <div className="card-body">
         <h5 className="card-title">{data.name}</h5>
@@ -89,33 +89,33 @@ export const HeroCard = ({hero}) => {
             <tbody>
               <tr>
                 <td>Intelligence</td> 
-                <td className="text-center">{data.powerstats.intelligence}</td>
+                <td className="text-right pr-4">{data.powerstats.intelligence}</td>
               </tr>
               <tr>
                 <td>Strength</td> 
-                <td className="text-center">{data.powerstats.strength}</td>
+                <td className="text-right pr-4">{data.powerstats.strength}</td>
               </tr>
               <tr>
                 <td>Speed</td>
-                <td className="text-center">{data.powerstats.speed}</td>
+                <td className="text-right pr-4">{data.powerstats.speed}</td>
               </tr>
               <tr>
                 <td>Durability</td>
-                <td className="text-center">{data.powerstats.durability}</td>
+                <td className="text-right pr-4">{data.powerstats.durability}</td>
               </tr>
               <tr>
                 <td>Power</td> 
-                <td className="text-center">{data.powerstats.power}</td>
+                <td className="text-right pr-4">{data.powerstats.power}</td>
               </tr>
               <tr>
                 <td>Combat</td>
-                <td className="text-center">{data.powerstats.combat}</td>
+                <td className="text-right pr-4">{data.powerstats.combat}</td>
               </tr>
             </tbody>
           </table>
         }
 
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-around btns">
           { location.pathname !== HOME_SCREEN ?
             <Link className="alkemy-btn-primary" to={HOME_SCREEN}>{BACK_BTN}</Link> 
           :

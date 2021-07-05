@@ -10,3 +10,17 @@ td {
 	width: 50%;
 	text-align: left;
 }
+.alkemy-card {
+	max-width: 400px;
+}
+/* Image round borders */
+.alkemy-card .card-img-top {
+	border-radius: 10px 10px 0 0 ;
+	min-height: 300px;
+	max-height: 350px !important;
+}
+
+.btns {
+	flex-wrap: wrap;
+}
+

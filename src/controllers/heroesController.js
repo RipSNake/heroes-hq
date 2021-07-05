@@ -36,10 +36,12 @@ export const teamPowerStats = (team) => {
 	const avgPhysicals = {height: [0,0], weight: [0,0]};
 
 	for(const member of team) {
-		console.log('Height ',member.appearance.height[0]);
+		
+		// foot and pounds
 		avgPhysicals.height[0] += parseInt(member.appearance.height[0].substring( member.appearance.height[0].length - 1, 0));
-		avgPhysicals.height[1] += parseInt(member.appearance.height[1].substring( member.appearance.height[1].length - 2, 0));
 		avgPhysicals.weight[0] += parseInt(member.appearance.weight[0].substring( member.appearance.weight[0].length - 2, 0));
+		// cm and kg
+		avgPhysicals.height[1] += parseInt(member.appearance.height[1].substring( member.appearance.height[1].length - 2, 0));
 		avgPhysicals.weight[1] += parseInt(member.appearance.weight[1].substring( member.appearance.weight[1].length - 2, 0));
 
 		for(const ps in member['powerstats']) {
@@ -57,6 +59,8 @@ export const teamPowerStats = (team) => {
 	avgPhysicals.height[1] /= team.length;
 	avgPhysicals.weight[0] /= team.length;
 	avgPhysicals.weight[1] /= team.length;
+
+
 
 	return {totalPS, avgPhysicals};
 }

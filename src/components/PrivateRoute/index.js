@@ -1,16 +1,18 @@
 import { Route, Redirect } from 'react-router-dom';
-import { isLoggedIn } from './../LoginForm/validation';
+import { useSelector } from 'react-redux';
+import { SUCCEEDED, LOGIN_SCREEN } from './../../constants';
 
 export const PrivateRoute = ({children, ...rest}) => {
-	const isLogged = isLoggedIn();
+
+	const logged = useSelector(state => state.user.status);
 
 	return (
 			<Route {...rest}>
 				{props => 
-				 isLogged ?
+				 logged === SUCCEEDED ?
 					children
 				:
-					<Redirect to={{pathname: '/login', state: { from: props.location } }} />
+					<Redirect to={{pathname: LOGIN_SCREEN, state: { from: props.location } }} />
 				}
 				
 			</Route>

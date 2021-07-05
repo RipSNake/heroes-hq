@@ -24,14 +24,14 @@ export const alertInfo = (text, title) => {
 	})
 }
 
-export const alertConfirm = (title, text) => {
-  return Swal.fire({
+export const alertConfirm = async (title, text, confirmText) => {
+  return await Swal.fire({
     title: title || 'Are you sure?',
     text: text || "You won't be able to revert this!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: confirmText || 'Yes, delete it!'
   })
 }

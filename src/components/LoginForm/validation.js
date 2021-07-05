@@ -1,33 +1,47 @@
 import apiService from './../../services/apiService';
-import { LOGIN_URL, POST, LOGIN_SCREEN, HOME_SCREEN } from './../../constants';
-import { alertSuccess, alertError } from './../Alerts';
-import login from './../../features/userSlice';
+import { LOGIN_URL, POST, HOME_SCREEN } from './../../constants';
+import { alertSuccess, alertError, alertConfirm } from './../Alerts';
+import { login, logout } from './../../features/userSlice';
 
 export const loginHandler = async (values, history, dispatch) => {
 	
 	const token = await apiService({baseURL: LOGIN_URL, method: POST, data: values});
+	console.log(values.email);
 
 	if(token instanceof Error) {
 		alertError('Datos de logueo Incorrectos');
 	} else {
 		alertSuccess(`Bienvenido ${values.email}`);
-		dispatch(login({email: values.email, token}))
-		localStorage.setItem('token', token);
-		localStorage.setItem('user', values.email);
+		dispatch(login({email: values.email, token: token.token}));
 		history.push(HOME_SCREEN);
 	}
 }
 
 export const isLoggedIn = () => {
 	const user = localStorage.getItem('user');
+	const token = localStorage.getItem('token');
 	if(user !== null && user !== undefined) {
-		return true;
+		if(token !== null && token !== undefined){
+			return true;
+		}
 	}
 	return false;
 }
 
-export const logoutHandler = (history) => {
-	console.log('LOGOUG');
-	localStorage.clear();
-	history.push(LOGIN_SCREEN);
+export const logoutHandler = (history, dispatch) => {
+	let res = alertConfirm('Está seguro?','Esta a punto de cerrar sesión...', 'Salir');
+	res.then(r => {
+		if(r.value) {
+			dispatch(logout());
+			history.push('/');
+		}
+	}) 
+}
+
+export const getUser = () => {
+	const data = {
+		email: localStorage.getItem('user'),
+		token: localStorage.getItem('token'),
+	}
+	return data;
 }

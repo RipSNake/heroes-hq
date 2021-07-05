@@ -1,8 +1,27 @@
+/* 
+  primary:  #2196f3;
+  secondary: #f44336;
+*/
 .stat {
   order: 1;
+  padding: 0;
 }
 
 .main-stat {
   order: 0;
-  background-color: red;
+  flex-basis: 100%;
+  max-width: 100% !important;
+  margin-bottom:  1rem;
+  border-radius: 5px;
+  border: .5px solid #2196f344;
+  box-shadow: 1px 1px 5px #2196f3af, -1px -1px 5px #2196f3af;
+}
+
+.main-stat .card-title {
+  font-size: 4rem !important;
+  font-weight: 400 !important;
+}
+
+.main-stat .card-text {
+  font-size: 2rem !important;
 }

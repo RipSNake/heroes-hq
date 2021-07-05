@@ -27,7 +27,7 @@ export const LoginForm = () => {
 					<div className="my-4">
 				    <label htmlFor="email" className="alkemy-form-label">Email</label>
 				    <Field type="email" className="alkemy-form-control" name="email" id="email" placeholder="your@email.com" />
-            <div style={{'height': '1rem', 'maxHeight': '1rem', 'fontSize':'small'}}>
+            <div style={{'height': '1rem', 'maxHeight': '1rem', 'fontSize':'small', color: 'red'}}>
 					    {errors.email && touched.email ? 
 	           		`${errors.email}`
 					    	: null 
@@ -36,8 +36,8 @@ export const LoginForm = () => {
 			    </div>
 			    <div className="my-4">
 				    <label htmlFor="password" className="alkemy-form-label">Password</label>
-				    <Field type="password" className="alkemy-form-control" id="password" name="password"/>
-				    <div style={{'height': '1rem', 'maxHeight': '1rem', 'fontSize':'small'}}>
+				    <Field type="password" className="alkemy-form-control" id="password" name="password" placeholder="mysecretpassword" autoComplete="true"/>
+				    <div style={{'height': '1rem', 'maxHeight': '1rem', 'fontSize':'small', color: 'red'}}>
 					    {errors.password && touched.password ? 
 	           		`${errors.password}`
 					    	: null 

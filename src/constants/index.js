@@ -3,6 +3,7 @@ export const LOGIN_SCREEN = '/login';
 export const HOME_SCREEN = '/home';
 export const SEARCH_SCREEN = '/search';
 export const HERO_SCREEN = '/hero';
+export const LOGOUT_SCREEN = '/logout';
 
 // redux slice status
 export const IDLE = 'idle';
