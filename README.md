@@ -22,8 +22,8 @@ In this demo version the only accepted user is:
 
 # Home Screen
 
-<img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Home_1.png"/>
-<img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Home_2.png"/>
+<img src="https://github.com/RipSNake/heroes-hq/tree/main/src/DemoImgs/Home_1.png"/>
+<img src="https://github.com/RipSNake/heroes-hq/tree/main/src/DemoImgs/Home_2.png"/>
 
 In the Main Screen you can see all the heroes that are included into your team,
 
