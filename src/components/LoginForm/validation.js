@@ -7,7 +7,7 @@ export const loginHandler = async (values, history, dispatch) => {
 	
 	const token = {token: 'fake-token'};
 
-	if(values.email === 'challenge@alkemy.org') {
+	if(values.email !== 'challenge@alkemy.org') {
 		alertError('Datos de logueo Incorrectos');
 	} else {
 		alertSuccess(`Bienvenido ${values.email}`);
