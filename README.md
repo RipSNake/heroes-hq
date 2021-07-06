@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a03bb05e-3729-4334-87f2-6a98b887d172/deploy-status)](https://app.netlify.com/sites/superhero-hq/deploys)
+
 # SuperHeroes's HQ
 
 Manage your own Team of Heroes !!
@@ -6,7 +8,7 @@ In this API you can combine your most beloved heroes together an recruit the tea
 
 We use https://superheroapi.com/api.php for fetching our list of heroes.
 
-# Login Screen
+## Login Screen
 
 <img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Login.PNG" style="margin: 0 auto" />
 
@@ -20,7 +22,7 @@ In this demo version the only accepted user is:
 - Email: challenge@alkemy.org 
 - Password: 'react'
 
-# Home Screen
+## Home Screen
 
 <img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Home_1.PNG" style="margin: 0 auto"/>
 <img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Home_2.PNG" style="margin: 0 auto"/>
@@ -35,7 +37,7 @@ Each Hero Tile has 2 options:
 
 - Delete: removes the Hero from your Team's formation, after confirmation.
 
-# Search Screen
+## Search Screen
 
 <img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Search.PNG" style="margin: 0 auto"/>
 
@@ -45,7 +47,7 @@ Then displays all available results and allows you to add them to your Team.
 
 If no results a obtained or an error ocurred, an Alert wll display and notificy what happened.
 
-# Details Screen
+## Details Screen
 
 <img src="https://github.com/RipSNake/heroes-hq/blob/main/src/DemoImgs/Details.PNG" style="margin: 0 auto"/>
 
@@ -59,7 +61,7 @@ Shows the Hero's most relevant Personal Information:
 - Hair-color
 - Place of Work/Base
 
-# Tecnologies Used
+### Tecnologies Used
 
 - <a href="https://github.com/axios/axios">Axios</a>
 - <a href="https://formik.org/docs/overview">Formik</a> + <a href="https://github.com/jquense/yup">Yup</a>
