@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a03bb05e-3729-4334-87f2-6a98b887d172/deploy-status)](https://app.netlify.com/sites/superhero-hq/deploys)
+
+Check it out Here: https://superhero-hq.netlify.app/login
+
 # SuperHeroes's HQ
 
 Manage your own Team of Heroes !!
