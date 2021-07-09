@@ -1,37 +1,38 @@
 import Swal from 'sweetalert2';
+import { alertErrorStr as AE, alertInfoStr as AI, alertSuccessStr as AS, alertConfirmStr as AC } from './../../constants';
 
 export const alertError = (text, title) => {
 	Swal.fire({
     icon: 'error',
-    title: title || 'Error',
-    text: text || 'No se pudieron obtener los datos!',
+    title: title || AE.title,
+    text: text || AE.text,
   })
 }
 
 export const alertSuccess = (text, title) => {
 	Swal.fire({
       icon: 'success',
-      title: title || 'Éxito',
-      text: text || 'Acción realizada con Éxito!',
+      title: title || AS.title,
+      text: text || AS.text,
   })
 }
 
 export const alertInfo = (text, title) => {
 	Swal.fire({
     icon: 'warning',
-    title: title || 'Aviso',
-    text: text || 'Pudiste loguearte. Serás redirigido al home',
+    title: title || AI.title,
+    text: text || AI.text,
 	})
 }
 
 export const alertConfirm = async (title, text, confirmText) => {
   return await Swal.fire({
-    title: title || 'Are you sure?',
-    text: text || "You won't be able to revert this!",
+    title: title || AC.title,
+    text: text || AC.text,
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: confirmText || 'Yes, delete it!'
+    confirmButtonText: confirmText || AC.confirmBtn
   })
 }
